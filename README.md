@@ -1,4 +1,5 @@
 # Event_booking
+
 Event Booking Task using Python-Django.
 Django version : 4.2.9
 
@@ -21,9 +22,18 @@ A mini event booking system built with Django.
 ```bash
 1. git clone https://github.com/vigneshkumargithub/event_booking.git
 2. cd event_booking
-3. python -m venv venv
-4. source venv/bin/activate
+3. python -m venv mvenv
+4. myvenv/Scripts/activate
 5. pip install -r requirements.txt
 6. python manage.py migrate
 7. python manage.py createsuperuser
 8. python manage.py runserver
+```
+
+```bash
+Refer:
+
+1. Using django documentation for context processor
+2. Stack overflow for resolving bugs and syntax error.
+
+```

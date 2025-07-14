@@ -1,0 +1,17 @@
+{% extends 'booking/base.html' %}
+{% load custom_filters %}
+
+{% block content %}
+<h1>Upcoming Events</h1>
+<ul>
+    {% for event in events %}
+    <li>
+        <a href="{% url 'event_detail' event.pk %}">{{ event.title }}</a> -
+        {{ event.date }} ({{ event|seats_left }} seats left)
+        {% if event.sold_out %} - SOLD OUT {% endif %}
+    </li>
+    {% empty %}
+    <li>No upcoming events</li>
+    {% endfor %}
+</ul>
+{% endblock %}

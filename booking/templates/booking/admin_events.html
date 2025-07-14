@@ -1,0 +1,19 @@
+{% extends 'booking/base.html' %}
+{% block content %}
+<h2>Admin Panel - Event Overview</h2>
+<ul>
+    {% for event in events %}
+    <li>
+        {{ event.title }} | {{ event.booked_seats }} booked / {{ event.capacity }} seats
+        {% if event.sold_out %} - <strong>SOLD OUT</strong>{% endif %}
+        <ul>
+            {% for booking in event.bookings.all %}
+            <li>{{ booking.name }} - {{ booking.number_of_seats }} seats</li>
+            {% empty %}
+            <li>No bookings yet</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
